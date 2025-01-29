@@ -22,7 +22,7 @@
     <ul class="list-group">
       <li
         class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
+        @for (tutorial of tutorials; track tutorial.id; let i = $index)
         [class.active]="i == currentIndex"
         (click)="setActiveTutorial(tutorial, i)"
       >
