@@ -1,4 +1,4 @@
-# Angular 14 example project: CRUD with Rest API
+# Angular 14 Example Project: CRUD with Rest API
 
 Build an Angular 14 CRUD App example to consume Rest APIs, display, modify & search data.
 
