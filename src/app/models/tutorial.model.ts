@@ -1,6 +1,7 @@
 export class Tutorial {
-  id?: any;
+  id?: number;
   title?: string;
   description?: string;
   published?: boolean;
+  message?: string;
 }

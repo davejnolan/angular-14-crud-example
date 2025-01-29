@@ -33,7 +33,8 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
   getTutorial(id: string): void {
-    this.tutorialService.get(id)
+    const numericId = parseInt(id, 10);
+    this.tutorialService.get(numericId)
       .subscribe({
         next: (data) => {
           this.currentTutorial = data;
@@ -52,7 +53,7 @@ export class TutorialDetailsComponent implements OnInit {
 
     this.message = '';
 
-    this.tutorialService.update(this.currentTutorial.id, data)
+    this.tutorialService.update(this.currentTutorial.id!, data)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -66,7 +67,7 @@ export class TutorialDetailsComponent implements OnInit {
   updateTutorial(): void {
     this.message = '';
 
-    this.tutorialService.update(this.currentTutorial.id, this.currentTutorial)
+    this.tutorialService.update(this.currentTutorial.id!, this.currentTutorial)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -77,7 +78,7 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
   deleteTutorial(): void {
-    this.tutorialService.delete(this.currentTutorial.id)
+    this.tutorialService.delete(this.currentTutorial.id!)
       .subscribe({
         next: (res) => {
           console.log(res);
