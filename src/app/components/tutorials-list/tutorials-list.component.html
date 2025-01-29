@@ -7,9 +7,10 @@
         placeholder="Search by title"
         [(ngModel)]="title"
       />
-      <div class="input-group-append">
+      <div class="input-group">
         <button
           class="btn btn-outline-secondary"
+          type="button"
           (click)="searchTitle()"
         >
           Search
@@ -30,14 +31,14 @@
       </li>
     </ul>
 
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+    <button class="btn btn-sm btn-danger mt-3" (click)="removeAllTutorials()">
       Remove All
     </button>
   </div>
   <div class="col-md-6">
     <app-tutorial-details
-      [viewMode]="true"
-      [currentTutorial]="currentTutorial"
+      [tutorial]="currentTutorial"
+      (refreshList)="refreshList()"
     ></app-tutorial-details>
   </div>
 </div>

@@ -9,7 +9,6 @@ const baseUrl = 'http://localhost:8080/api/tutorials';
   providedIn: 'root'
 })
 export class TutorialService {
-
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Tutorial[]> {
@@ -36,7 +35,7 @@ export class TutorialService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Tutorial[]> {
+  findByTitle(title: string): Observable<Tutorial[]> {
     return this.http.get<Tutorial[]>(`${baseUrl}?title=${title}`);
   }
 }
