@@ -14,7 +14,7 @@
     </div>
 
     <a
-      class="badge badge-warning"
+      class="badge bg-warning text-dark"
       routerLink="/tutorials/{{ currentTutorial.id }}"
     >
       Edit
@@ -31,8 +31,8 @@
   <div *ngIf="currentTutorial.id" class="edit-form">
     <h4>Tutorial</h4>
     <form>
-      <div class="form-group">
-        <label for="title">Title</label>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
         <input
           type="text"
           class="form-control"
@@ -41,8 +41,8 @@
           name="title"
         />
       </div>
-      <div class="form-group">
-        <label for="description">Description</label>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
         <input
           type="text"
           class="form-control"
@@ -52,14 +52,14 @@
         />
       </div>
 
-      <div class="form-group">
-        <label><strong>Status:</strong></label>
+      <div class="mb-3">
+        <label class="form-label"><strong>Status:</strong></label>
         {{ currentTutorial.published ? "Published" : "Pending" }}
       </div>
     </form>
 
     <button
-      class="badge badge-primary mr-2"
+      class="badge bg-primary me-2"
       *ngIf="currentTutorial.published"
       (click)="updatePublished(false)"
     >
@@ -67,19 +67,19 @@
     </button>
     <button
       *ngIf="!currentTutorial.published"
-      class="badge badge-primary mr-2"
+      class="badge bg-primary me-2"
       (click)="updatePublished(true)"
     >
       Publish
     </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+    <button class="badge bg-danger me-2" (click)="deleteTutorial()">
       Delete
     </button>
 
     <button
       type="submit"
-      class="badge badge-success mb-2"
+      class="badge bg-success mb-2"
       (click)="updateTutorial()"
     >
       Update
